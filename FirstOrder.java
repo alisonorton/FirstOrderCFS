@@ -23,5 +23,24 @@ public class FirstOrder{
         //Display S(1)
         System.out.printf("S(1) = %.1f%n", s1);
 
+ 
+
+        for(int n = 1; n <= 10; n++){
+ 
+            double total = Math.pow(c, n - 1) * s1;
+             //System.out.println(total);
+
+            for(int i = 2; i <= 10; i++){
+            
+                total += Math.pow(c, n - i) * gn;
+                //System.out.println(sigma);
+
+
+            }
+      
+
+            System.out.printf("S(%d) = %.1f%n", n, total);
+        }
+
     }
 }
