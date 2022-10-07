@@ -6,6 +6,7 @@ public class FirstOrder{
 
         //Reading and storing input
         var s = new Scanner(System.in);
+        double sn;
 
         s.next();
         double s1 = s.nextDouble();
@@ -21,25 +22,22 @@ public class FirstOrder{
         //System.out.println("S(n) = " + c + "(n - 1) * " + s1 + " sigma(" + c + "^(n - i) * " + gn + ")");
 
         //Display S(1)
-        System.out.printf("S(1) = %.1f%n", s1);
+        //System.out.printf("S(1) = %.1f%n", s1);
 
  
 
         for(int n = 1; n <= 10; n++){
  
-            double total = Math.pow(c, n - 1) * s1;
+            sn = 0;
+            sn = Math.pow(c, n - 1) * s1;
              //System.out.println(total);
 
-            for(int i = 2; i <= 10; i++){
+            for(int i = 2; i <= n; i++){
             
-                total += Math.pow(c, n - i) * gn;
+                sn += Math.pow(c, n - i) * gn;
                 //System.out.println(sigma);
-
-
-            }
-      
-
-            System.out.printf("S(%d) = %.1f%n", n, total);
+            } 
+            System.out.printf("S(%d) = %.1f%n", n, sn);
         }
 
     }
